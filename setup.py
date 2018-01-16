@@ -1,5 +1,9 @@
+import sys
 from setuptools import setup, find_packages
 
+if sys.version_info < (3,):
+    sys.stderr.write("Python < 3 is not supported\n")
+    sys.exit(1)
 
 install_requires = [
     "PyYAML",
@@ -7,7 +11,7 @@ install_requires = [
 
 setup(
     name="ts3proxy",
-    version='0.1',
+    version='0.3',
     author="Karl-Martin Minkner",
     author_email="support@kandru.de",
     packages=find_packages(),
